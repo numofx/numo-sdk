@@ -1,0 +1,43 @@
+{
+  "name": "yieldspace-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for YieldSpace AMM - ABIs, types, and deployment addresses",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "abis/**/*",
+    "deployments/**/*"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist src/types",
+    "typechain": "typechain --target ethers-v6 --out-dir src/types 'abis/*.json'",
+    "build": "npm run typechain && tsc",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numofx/yieldspace-sdk.git"
+  },
+  "author": "numofx",
+  "license": "MIT",
+  "keywords": [
+    "yieldspace",
+    "amm",
+    "defi",
+    "ethereum",
+    "celo",
+    "typescript",
+    "sdk"
+  ],
+  "peerDependencies": {
+    "ethers": "^6.0.0"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v6": "^0.5.1",
+    "ethers": "^6.13.4",
+    "typechain": "^8.3.2",
+    "typescript": "^5.9.3"
+  }
+}
